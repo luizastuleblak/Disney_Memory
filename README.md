@@ -14,4 +14,4 @@ Project is created with:
 * ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ## 🌐
-https://disneymemory.luiza0607.repl.co
+https://disneymemory-1.luiza0607.repl.co
