@@ -19,14 +19,12 @@ function Cards() {
 		{ id: 7, img: '/img/pluto.jpeg', stat: "" },
 		{ id: 8, img: '/img/daisy.jpg', stat: "" },
 		{ id: 8, img: '/img/daisy.jpg', stat: "" },
-	].sort(() => Math.random() - 0.5))
+	].sort(() => Math.random() -0.5))
 
 	const [prev, setPrev] = useState(-1)
-	const [revealed, setRevealed] = useState(Array(items.length).fill(false));
-
 
 	function check(current) {
-		if (items[current].id === items[prev].id) {
+		if (items[current].id == items[prev].id) {
 			items[current].stat = "correct"
 			items[prev].stat = "correct"
 			setItems([...items])
@@ -45,16 +43,12 @@ function Cards() {
 	}
 
 	function handleClick(id) {
-		if (prev === -1 && !revealed[id]) {
-			items[id].stat = "active";
-			setItems([...items]);
-			setPrev(id);
-
-			const updatedRevealed = [...revealed];
-			updatedRevealed[id] = true;
-			setRevealed(updatedRevealed);
+		if (prev === -1) {
+			items[id].stat = "active"
+			setItems([...items])
+			setPrev(id)
 		} else {
-			check(id);
+			check(id)
 		}
 	}
 
@@ -62,7 +56,6 @@ function Cards() {
 		<div className="container">
 			{items.map((item, index) => (
 				<Card key={index} item={item} id={index} handleClick={handleClick} />
-				
 			))}
 		</div>
 	)
